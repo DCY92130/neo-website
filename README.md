@@ -4,9 +4,9 @@ Site vitrine de [Neowebsite](https://neo-website.fr) — création de sites web 
 
 ## Offres
 
-- **Vitrine** : 365 € (TVA non applicable)
-- **Vitrine + nom de domaine** : 395 € (TVA non applicable)
-- Paiement à la livraison — modifications après coup sur devis
+- **Essentiel** : 365 € + 5 €/mois — site vitrine, nom de domaine, hébergement, modifications simples 25 € pièce (TVA non applicable)
+- **All-in** : 365 € + 15 €/mois — tout Essentiel + toutes les modifications incluses, sans limite (TVA non applicable)
+- Nouvelles pages & refontes : sur devis — paiement à la livraison, sans engagement
 
 ## Stack
 

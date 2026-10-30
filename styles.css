@@ -79,8 +79,22 @@ a:focus-visible, button:focus-visible {
 .nav-toggle.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ---------- hero ---------- */
-.hero { padding-block: 4.5rem 3.5rem; }
-.hero-inner { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3rem; align-items: center; }
+.hero {
+  position: relative; overflow: hidden;
+  padding-block: 4.5rem 3.5rem;
+  background:
+    radial-gradient(1000px 560px at 80% 22%, color-mix(in srgb, var(--violet) 11%, transparent), transparent 70%),
+    radial-gradient(760px 460px at 12% 90%, color-mix(in srgb, var(--coral) 9%, transparent), transparent 70%);
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0;
+  background-image: radial-gradient(color-mix(in srgb, var(--violet) 16%, transparent) 1px, transparent 1.4px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(640px 440px at 74% 40%, #000 0%, transparent 78%);
+  mask-image: radial-gradient(640px 440px at 74% 40%, #000 0%, transparent 78%);
+  pointer-events: none;
+}
+.hero-inner { position: relative; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3rem; align-items: center; }
 .hero-copy { max-width: 580px; }
 
 .eyebrow {
@@ -91,12 +105,26 @@ a:focus-visible, button:focus-visible {
 
 .hero-title {
   font-family: var(--font-display); font-weight: 700;
-  font-size: clamp(2rem, 4.6vw, 3.3rem); line-height: 1.08; letter-spacing: -0.01em;
+  font-size: clamp(2.1rem, 5vw, 3.7rem); line-height: 1.05; letter-spacing: -0.02em;
 }
 .hero-title em { font-style: normal; color: var(--violet); }
 
 .hero-sub { margin-top: 1.2rem; max-width: 460px; font-size: 1.08rem; color: var(--muted); }
 .hero-cta { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.8rem; }
+.hero-trust {
+  list-style: none; margin-top: 1.9rem;
+  display: flex; flex-wrap: wrap; gap: 0.6rem 1.6rem;
+}
+.hero-trust li {
+  display: flex; align-items: center; gap: 0.55rem;
+  font-weight: 600; font-size: 0.95rem; color: var(--ink);
+}
+.trust-ico {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.55rem; height: 1.55rem; border-radius: 50%;
+  background: var(--coral); color: #fff; font-size: 0.82rem; font-weight: 700; line-height: 1;
+  flex: none;
+}
 
 /* ---------- étiquettes de vitrine (signature) ---------- */
 .hero-tags { position: relative; display: flex; justify-content: center; align-items: center; min-height: 340px; }
@@ -109,6 +137,10 @@ a:focus-visible, button:focus-visible {
 .price-tag::before {
   content: ""; position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
   width: 24px; height: 24px; background: var(--bg); border: 2px solid var(--ink); border-radius: 50%;
+}
+.price-tag::after {
+  content: ""; position: absolute; top: -36px; left: 50%; transform: translateX(-50%);
+  width: 2px; height: 22px; background: var(--muted); border-radius: 1px;
 }
 .tag-kicker {
   display: block; font-family: var(--font-mono); font-size: 0.68rem; font-weight: 700;
@@ -241,7 +273,7 @@ a:focus-visible, button:focus-visible {
   position: relative; background: var(--card); border: 1px solid rgba(23, 20, 31, 0.1);
   border-radius: var(--radius); padding: 2rem 1.8rem; box-shadow: 0 1px 0 rgba(23,20,31,0.04);
 }
-.plan-featured { border: 2px solid var(--violet); }
+.plan-featured { border: 2px solid var(--violet); background: linear-gradient(180deg, #fff, color-mix(in srgb, var(--violet) 5%, #fff)); }
 .plan-badge {
   position: absolute; top: -12px; left: 1.4rem;
   font-family: var(--font-mono); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
@@ -251,6 +283,9 @@ a:focus-visible, button:focus-visible {
 .plan h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; margin-bottom: 0.7rem; }
 .plan-price { font-family: var(--font-display); font-weight: 800; font-size: 2.6rem; line-height: 1; color: var(--ink); }
 .plan-price em { font-style: normal; font-size: 0.4em; font-weight: 600; color: var(--violet); }
+.plan-suffix { display: block; margin-top: 0.35rem; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: var(--muted); }
+.plan-monthly { margin: 0.9rem 0 0; font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; color: var(--coral); line-height: 1.1; }
+.plan-monthly em { font-style: normal; font-size: 0.72em; font-weight: 600; }
 .plan-list { list-style: none; margin: 1.4rem 0 1.6rem; }
 .plan-list li { position: relative; padding-left: 1.4rem; margin-bottom: 0.5rem; color: var(--muted); font-size: 0.95rem; }
 .plan-list li::before { content: "✓"; position: absolute; left: 0; color: var(--violet); font-weight: 700; }
