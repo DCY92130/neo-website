@@ -26,7 +26,7 @@
     });
   }
 
-  // Formulaire de contact → ouvre un mail pré-rempli vers neowebsite@outlook.fr
+  // Formulaire de contact → ouvre un mail pré-rempli vers contact@neo-website.fr
   var form = document.getElementById("contact-form");
   if (form) {
     form.addEventListener("submit", function (e) {
@@ -40,7 +40,7 @@
       var body = "Nom : " + nom + "\nEmail : " + email + "\nActivité : " + activite + "\n\n" + message;
 
       window.location.href =
-        "mailto:neowebsite@outlook.fr" +
+        "mailto:contact@neo-website.fr" +
         "?subject=" + encodeURIComponent(subject) +
         "&body=" + encodeURIComponent(body);
     });

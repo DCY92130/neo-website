@@ -186,6 +186,32 @@ a:focus-visible, button:focus-visible {
   content: "✦"; position: absolute; left: 1.1rem; color: var(--violet); font-size: 0.85rem; top: 1.05rem;
 }
 
+/* ---------- exemples ---------- */
+.exemples-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.exemple { display: flex; flex-direction: column; }
+.exemple-window {
+  background: var(--card); border: 1px solid rgba(23, 20, 31, 0.12);
+  border-radius: 14px; overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.exemple:hover .exemple-window { transform: translateY(-4px); box-shadow: var(--shadow); }
+.exemple-dots { display: flex; gap: 5px; padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(23, 20, 31, 0.08); }
+.exemple-dots i { width: 9px; height: 9px; border-radius: 50%; background: rgba(23, 20, 31, 0.14); }
+.exemple-dots i:nth-child(1) { background: var(--coral); }
+.exemple-dots i:nth-child(2) { background: #f0b429; }
+.exemple-dots i:nth-child(3) { background: #34c169; }
+.exemple-body {
+  display: flex; flex-direction: column; gap: 0.4rem; justify-content: center;
+  min-height: 128px; padding: 1.4rem 1.3rem 1.4rem 1.2rem;
+  border-left: 4px solid var(--accent, var(--violet));
+}
+.exemple-name { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; line-height: 1.2; }
+.exemple-tag {
+  font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--muted);
+}
+.exemple-desc { margin-top: 0.7rem; color: var(--muted); font-size: 0.95rem; }
+
 /* ---------- tarifs ---------- */
 .pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 820px; }
 .plan {
@@ -266,7 +292,7 @@ a:focus-visible, button:focus-visible {
   .nav-toggle { display: flex; }
   .hero-inner { grid-template-columns: 1fr; }
   .hero-tags { order: -1; min-height: 300px; }
-  .who-grid, .pricing-grid, .contact-grid { grid-template-columns: 1fr; }
+  .who-grid, .exemples-grid, .pricing-grid, .contact-grid { grid-template-columns: 1fr; }
   .contact-grid { gap: 2rem; }
 }
 
