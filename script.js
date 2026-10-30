@@ -63,4 +63,25 @@
   } else {
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
   }
+
+  // Effet "waouh" : inclinaison 3D des fenêtres d'exemples au survol
+  var exempleWindows = document.querySelectorAll(".exemple-window");
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var isTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+
+  if (exempleWindows.length && !reduceMotion && !isTouch) {
+    exempleWindows.forEach(function (card) {
+      card.addEventListener("mousemove", function (e) {
+        var r = card.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - 0.5;
+        var py = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform =
+          "perspective(900px) rotateX(" + (-py * 7).toFixed(2) +
+          "deg) rotateY(" + (px * 9).toFixed(2) + "deg) translateY(-5px)";
+      });
+      card.addEventListener("mouseleave", function () {
+        card.style.transform = "";
+      });
+    });
+  }
 })();

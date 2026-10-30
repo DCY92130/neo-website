@@ -192,9 +192,13 @@ a:focus-visible, button:focus-visible {
 .exemple-window {
   background: var(--card); border: 1px solid rgba(23, 20, 31, 0.12);
   border-radius: 14px; overflow: hidden;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  transform: perspective(900px);
+  transition: transform 0.22s ease-out, box-shadow 0.18s ease;
+  will-change: transform;
 }
-.exemple:hover .exemple-window { transform: translateY(-4px); box-shadow: var(--shadow); }
+.exemple:hover .exemple-window {
+  box-shadow: var(--shadow), 0 20px 40px -16px color-mix(in srgb, var(--accent, var(--violet)) 50%, transparent);
+}
 .exemple-dots { display: flex; gap: 5px; padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(23, 20, 31, 0.08); }
 .exemple-dots i { width: 9px; height: 9px; border-radius: 50%; background: rgba(23, 20, 31, 0.14); }
 .exemple-dots i:nth-child(1) { background: var(--coral); }
@@ -209,6 +213,10 @@ a:focus-visible, button:focus-visible {
 .exemple-tag {
   font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.05em;
   text-transform: uppercase; color: var(--muted);
+}
+.exemple-adresse {
+  font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.02em;
+  color: var(--muted);
 }
 .exemple-desc { margin-top: 0.7rem; color: var(--muted); font-size: 0.95rem; }
 
