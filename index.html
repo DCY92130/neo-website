@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Neowebsite — Sites web pour commerçants, artisans & TPE</title>
   <meta name="description" content="Neowebsite crée des sites web simples et pro pour commerçants, artisans et TPE. Site vitrine à 365 € + 5 €/mois, forfait all-in à 365 € + 15 €/mois. Paiement à la livraison." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -250,6 +247,10 @@
             <span>Votre projet</span>
             <textarea name="message" rows="4" placeholder="Ex. : je tiens une boulangerie et je n'ai pas encore de site."></textarea>
           </label>
+          <label class="consent">
+            <input type="checkbox" name="consent" required />
+            <span>J'accepte que mes informations soient utilisées uniquement pour répondre à ma demande, conformément à la <a href="politique-de-confidentialite.html">politique de confidentialité</a>.</span>
+          </label>
           <button type="submit" class="btn btn-accent">Envoyer</button>
         </form>
       </div>
@@ -275,6 +276,10 @@
     <div class="container footer-bottom">
       <span>© <span id="year">2026</span> Neowebsite</span>
       <span>Paiement à la livraison.</span>
+    </div>
+    <div class="container footer-legal">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="politique-de-confidentialite.html">Politique de confidentialité</a>
     </div>
   </footer>
 

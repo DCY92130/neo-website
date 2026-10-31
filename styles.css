@@ -1,5 +1,77 @@
 /* Neowebsite — identité "jeune & dynamique" : violet électrique + corail, étiquette de vitrine */
 
+/* Polices auto-hébergées (RGPD : aucune requête vers Google) */
+@font-face {
+  font-family: "Unbounded";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/unbounded-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Unbounded";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/unbounded-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Unbounded";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/unbounded-700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Unbounded";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("fonts/unbounded-800.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/space-grotesk-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/space-grotesk-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/space-grotesk-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/space-grotesk-700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/space-mono-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/space-mono-700.woff2") format("woff2");
+}
+
 :root {
   --bg: #fbfaf7;
   --ink: #17141f;
@@ -317,6 +389,16 @@ a:focus-visible, button:focus-visible {
   outline: none; border-color: var(--violet);
 }
 .contact-form .btn { justify-self: start; }
+.contact-form .consent {
+  display: flex; align-items: flex-start; gap: 0.6rem;
+  font-size: 0.82rem; color: var(--muted); line-height: 1.5;
+}
+.contact-form .consent input {
+  width: 1rem; height: 1rem; padding: 0; margin: 0.2rem 0 0;
+  border: none; border-radius: 0; background: none;
+  accent-color: var(--violet); flex-shrink: 0;
+}
+.contact-form .consent a { color: var(--violet); text-decoration: underline; }
 
 /* ---------- footer ---------- */
 .site-footer { background: var(--ink); color: #fff; padding-block: 3rem 1.6rem; }
@@ -333,6 +415,12 @@ a:focus-visible, button:focus-visible {
   padding-top: 1.4rem; border-top: 1px solid rgba(255,255,255,0.14);
   font-family: var(--font-mono); font-size: 0.8rem; color: rgba(255,255,255,0.5);
 }
+.footer-legal {
+  display: flex; gap: 1.5rem; flex-wrap: wrap; padding-top: 1rem;
+  font-family: var(--font-mono); font-size: 0.8rem;
+}
+.footer-legal a { color: rgba(255,255,255,0.5); text-decoration: none; }
+.footer-legal a:hover { color: var(--coral); }
 
 /* ---------- reveal ---------- */
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -367,3 +455,18 @@ a:focus-visible, button:focus-visible {
   .reveal { opacity: 1; transform: none; transition: none; }
   .who-card { transition: none; }
 }
+
+/* ---------- pages légales ---------- */
+.legal-page { padding: 4rem 0 5rem; }
+.legal-page h1 {
+  font-family: var(--font-display); font-weight: 700; font-size: 2rem; letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+.legal-updated { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); margin-bottom: 2.5rem; }
+.legal-page section { margin-bottom: 2.2rem; }
+.legal-page h2 {
+  font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; margin-bottom: 0.6rem;
+}
+.legal-page p { color: var(--muted); font-size: 0.98rem; max-width: 46rem; }
+.legal-page a { color: var(--violet); }
+.legal-placeholder { color: var(--coral); font-weight: 700; }
